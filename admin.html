@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Admin — SDL_Visuals</title>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  /* small admin-specific tweaks */
+  .admin-wrap{max-width:1000px;margin:28px auto;padding:20px}
+  .admin-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+  .admin-panel{background:var(--card);padding:16px;border-radius:12px}
+  label{display:block;margin:8px 0 4px}
+  input[type="text"], input[type="url"], textarea, select{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+  .small{max-width:260px}
+  .upload-list{margin-top:10px; display:flex; gap:8px; flex-wrap:wrap}
+  .upload-item{padding:6px 8px;background:rgba(0,0,0,0.04);border-radius:8px}
+  .btn{display:inline-block;padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a class="logo" href="./">SDL_Visuals</a></div>
+    <nav class="main-nav">
+      <a href="./">Terug naar site</a>
+    </nav>
+  </header>
+
+  <main class="admin-wrap">
+    <h1>Admin paneel — Portfolio beheren</h1>
+    <p>Dit admin paneel werkt client-side. Wij slaan data op in je browser (localStorage) en bieden een export-functie waarmee je een ZIP kan downloaden met de geüpdatete <code>data/portfolio.json</code> en eventuele geüploade assets. Upload die bestanden vervolgens naar je GitHub-repo en push om de site live te zetten.</p>
+
+    <section class="admin-panel">
+      <h3>1) Upload bestanden (foto/video)</h3>
+      <input id="file-input" type="file" multiple accept="image/*,video/*" />
+      <div id="upload-list" class="upload-list" aria-live="polite"></div>
+      <p class="note">Beste werkwijze: upload je bestanden hier, voeg projecten toe met <em>type=file</em>, en exporteer daarna het pakket.</p>
+    </section>
+
+    <section class="admin-panel" style="margin-top:14px">
+      <h3>2) Nieuwe categorie toevoegen</h3>
+      <div style="display:flex;gap:8px;align-items:center">
+        <input id="new-cat" placeholder="Categorie naam (bv. Trouw)" />
+        <button id="add-cat" class="btn ghost">Voeg categorie toe</button>
+      </div>
+      <div id="cats-list" style="margin-top:10px"></div>
+    </section>
+
+    <section class="admin-panel" style="margin-top:14px">
+      <h3>3) Nieuw project toevoegen</h3>
+      <label>Titel</label>
+      <input id="proj-title" type="text" />
+      <label>Beschrijving</label>
+      <textarea id="proj-desc" rows="3"></textarea>
+      <label>Categorie</label>
+      <select id="proj-cat"></select>
+      <label>Type</label>
+      <select id="proj-type"><option value="image">Afbeelding</option><option value="video">Video</option><option value="file">Bestand (geüpload)</option></select>
+      <label>Bron (URL of kies bij upload)</label>
+      <input id="proj-src" placeholder="https://example.com/photo.jpg (of kies bestand hieronder)" />
+      <div style="margin-top:8px;display:flex;gap:8px">
+        <button id="add-proj" class="btn primary">Voeg project toe</button>
+        <button id="export-zip" class="btn ghost">Exporteer ZIP (portfolio + assets)</button>
+        <button id="import-json" class="btn ghost">Importeer JSON</button>
+        <input id="import-file" type="file" accept=".json,.zip" style="display:none" />
+      </div>
+    </section>
+
+    <section style="margin-top:16px" class="admin-panel">
+      <h3>Huidige projecten (localStorage)</h3>
+      <div id="current-list"></div>
+      <p style="margin-top:8px"><button id="reset-data" class="btn ghost">Reset lokale data</button></p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.7.1/dist/jszip.min.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

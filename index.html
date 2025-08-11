@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SDL_Visuals — Fotografie & Videografie</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="./" class="logo">SDL_Visuals</a>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu">☰</button>
+    </div>
+    <nav class="main-nav" id="main-nav">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#over">Over</a>
+      <a href="#contact">Contact</a>
+      <a href="admin.html" class="admin-link">Admin</a>
+      <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
+    </nav>
+  </header>
+
+  <div class="info-bar" id="info-bar">
+    SDL Visuals – Seppe De Luycker • Aaltersesteenweg 36, 9800 Deinze • Ondernemingsnr: BE1025472518 • Btw: BE1025472518 • info@sdlvisuals.be
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Creatieve fotografie & videografie op maat</h1>
+        <p class="lead">Ik breng jouw visie tot leven met oog voor detail en passie voor beeld. Gespecialiseerd in product-, auto- en evenementenfotografie. Binnenkort breid ik uit met trouwfotografie.</p>
+        <p><a class="cta" href="#portfolio">Bekijk mijn portfolio</a></p>
+      </div>
+      <div class="hero-media" aria-hidden="true">
+        <!-- hero image is set by CSS as background for better responsiveness -->
+      </div>
+    </section>
+
+    <section id="portfolio" class="section">
+      <h2>Portfolio</h2>
+      <div id="portfolio-controls" class="controls">
+        <div id="cats" class="cats" role="tablist" aria-label="Categorieën"></div>
+        <div class="search-wrap">
+          <input id="search" placeholder="Zoek titel of beschrijving..." aria-label="Zoek in portfolio" />
+        </div>
+      </div>
+
+      <div id="grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <section id="over" class="section about">
+      <h2>Over mij</h2>
+      <p>Hallo, ik ben <strong>Seppe De Luycker</strong>. Fotograaf en videograaf met een passie voor storytelling en techniek. Mijn werk focust op productfoto's, automotive shoots en evenementen. Ik werk vanuit België en ben beschikbaar voor (inter)nationale opdrachten.</p>
+      <ul class="skills">
+        <li>Productfotografie</li>
+        <li>Automotive</li>
+        <li>Evenementen</li>
+        <li>Videografie & aftermovies</li>
+        <li>Editing: Premiere / After Effects / Final Cut</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p>Interesse of een vraag? Mail naar <a href="mailto:info@sdlvisuals.be">info@sdlvisuals.be</a> of bel <a href="tel:+32475123456">+32 475 123 456</a>.</p>
+      <p class="note">Je kan ook via het admin-paneel (link rechtsboven) projecten toevoegen — zie README voor hoe je updates live zet via GitHub.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2025 SDL_Visuals — Seppe De Luycker</div>
+      <div class="footer-links">
+        <span>Aaltersesteenweg 36, 9800 Deinze</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lb-close" class="lb-close" aria-label="Sluit">×</button>
+    <div id="lb-content" class="lb-content" role="dialog" aria-modal="true"></div>
+    <div id="lb-caption" class="lb-caption"></div>
+  </div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

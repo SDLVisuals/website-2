@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "category": "Auto",
+    "title": "Tesla Model S Shoot",
+    "description": "Fotoreportage van een Tesla in stedelijke omgeving.",
+    "type": "image",
+    "src": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    "id": 2,
+    "category": "Product",
+    "title": "Smartwatch Promo",
+    "description": "Korte promotievideo van een smartwatch.",
+    "type": "video",
+    "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+  },
+  {
+    "id": 3,
+    "category": "Evenementen",
+    "title": "Tech Conference Aftermovie",
+    "description": "Aftermovie van een tech conferentie.",
+    "type": "video",
+    "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/bee.webm"
+  },
+  {
+    "id": 4,
+    "category": "Auto",
+    "title": "Classic Car Shoot",
+    "description": "Fotoreportage van een klassieke auto.",
+    "type": "image",
+    "src": "https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=1200&q=80"
+  }
+]
